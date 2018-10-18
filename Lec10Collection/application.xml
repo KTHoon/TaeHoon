@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Application Config</comment>
+<entry key="java.runtime.name">Java(TM) SE Runtime Environment</entry>
+<entry key="sun.boot.library.path">/usr/lib/jvm/java-8-oracle/jre/lib/amd64</entry>
+<entry key="java.vm.version">25.171-b11</entry>
+<entry key="url">jdbc:oracle:thin:@localhost:1521:XE</entry>
+<entry key="java.vm.vendor">Oracle Corporation</entry>
+<entry key="java.vendor.url">http://java.oracle.com/</entry>
+<entry key="path.separator">:</entry>
+<entry key="java.vm.name">Java HotSpot(TM) 64-Bit Server VM</entry>
+<entry key="file.encoding.pkg">sun.io</entry>
+<entry key="user.country">KR</entry>
+<entry key="sun.java.launcher">SUN_STANDARD</entry>
+<entry key="sun.os.patch.level">unknown</entry>
+<entry key="download.dir">/home/pc-15/downloads</entry>
+<entry key="java.vm.specification.name">Java Virtual Machine Specification</entry>
+<entry key="user.dir">/home/pc15/workspace/Lec10Collection</entry>
+<entry key="java.runtime.version">1.8.0_171-b11</entry>
+<entry key="java.awt.graphicsenv">sun.awt.X11GraphicsEnvironment</entry>
+<entry key="java.endorsed.dirs">/usr/lib/jvm/java-8-oracle/jre/lib/endorsed</entry>
+<entry key="os.arch">amd64</entry>
+<entry key="java.io.tmpdir">/tmp</entry>
+<entry key="line.separator">
+</entry>
+<entry key="java.vm.specification.vendor">Oracle Corporation</entry>
+<entry key="os.name">Linux</entry>
+<entry key="sun.jnu.encoding">UTF-8</entry>
+<entry key="java.library.path">/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib</entry>
+<entry key="member.name">name</entry>
+<entry key="java.specification.name">Java Platform API Specification</entry>
+<entry key="java.class.version">52.0</entry>
+<entry key="sun.management.compiler">HotSpot 64-Bit Tiered Compilers</entry>
+<entry key="os.version">4.10.0-38-generic</entry>
+<entry key="user">java</entry>
+<entry key="user.home">/home/pc15</entry>
+<entry key="user.timezone"/>
+<entry key="java.awt.printerjob">sun.print.PSPrinterJob</entry>
+<entry key="file.encoding">UTF-8</entry>
+<entry key="java.specification.version">1.8</entry>
+<entry key="password">oracle</entry>
+<entry key="java.class.path">/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jaccess.jar:/home/pc15/workspace/Lec10Collection/bin</entry>
+<entry key="user.name">pc15</entry>
+<entry key="driver">oracle.jdbc.driver.OracleDriver</entry>
+<entry key="member.id">ID</entry>
+<entry key="java.vm.specification.version">1.8</entry>
+<entry key="sun.java.command">Ex06Properties</entry>
+<entry key="java.home">/usr/lib/jvm/java-8-oracle/jre</entry>
+<entry key="sun.arch.data.model">64</entry>
+<entry key="user.language">ko</entry>
+<entry key="java.specification.vendor">Oracle Corporation</entry>
+<entry key="awt.toolkit">sun.awt.X11.XToolkit</entry>
+<entry key="java.vm.info">mixed mode</entry>
+<entry key="active.profile">dev</entry>
+<entry key="java.version">1.8.0_171</entry>
+<entry key="java.ext.dirs">/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext</entry>
+<entry key="sun.boot.class.path">/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes</entry>
+<entry key="java.vendor">Oracle Corporation</entry>
+<entry key="file.separator">/</entry>
+<entry key="java.vendor.url.bug">http://bugreport.sun.com/bugreport/</entry>
+<entry key="sun.io.unicode.encoding">UnicodeLittle</entry>
+<entry key="sun.cpu.endian">little</entry>
+<entry key="sun.desktop">gnome</entry>
+<entry key="sun.cpu.isalist"/>
+</properties>
