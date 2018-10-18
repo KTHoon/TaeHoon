@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+	  fx:controller="bind.Ex02BindRootController"
+	  prefWidth="300" prefHeight="200"
+	  spacing ="10">
+	  
+	 <padding><Insets topRightBottomLeft="10"/></padding>
+	 <!-- <spacing>10</spacing> -->
+	 
+	 <children>
+	 	<Label  text="TextArea1" />
+	 	<TextArea fx:id ="textArea1" />
+	 	
+	 	<Label  text="TextArea2" />
+	 	<TextArea fx:id ="textArea2" />
+	 </children>
+
+</VBox>
+

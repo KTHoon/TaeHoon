@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1">
+	<padding><Insets top ="10" right="10" bottom ="10" left="10"/></padding>
+	<spacing>10</spacing>
+	
+	<children>
+		<TextField>  <!-- new TextField() 생성자  -->
+			<prefWidth>300</prefWidth>
+		</TextField>	
+		<Button text = "확인"> <!-- new Button(String text) 파라미터 /annotation이 있어야함 -->	
+			<!-- <text>확인</text> -->
+		</Button>
+	</children>
+</HBox>
+

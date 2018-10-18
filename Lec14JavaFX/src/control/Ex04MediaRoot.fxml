@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Slider?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="control.Ex04MediaRootController"
+			prefWidth="600" prefHeight="400">
+
+	<center>
+		<StackPane >
+			<children>
+			<ImageView  fitWidth="400" fitHeight="250" preserveRatio="true">
+				<Image url="/res/images/Audio CD.png" />	
+			</ImageView>
+				
+				<MediaView fx:id="mediaView" fitWidth ="600" fitHeight="300" preserveRatio="true">
+				</MediaView>
+			
+			</children>
+				
+		</StackPane>
+	</center>
+	
+	<bottom>
+		<VBox>
+			<children>
+				
+				<HBox spacing="10">
+					<padding><Insets topRightBottomLeft="10"/></padding>
+					<children>
+						<Label fx:id="lblTime" text="00/00sec"/>
+						<ProgressBar fx:id="progressBar" progress="0.0" maxWidth="1000000000" HBox.hgrow="ALWAYS"/>
+						<ProgressIndicator fx:id="indicator" progress="0.0" />
+						<Slider fx:id="sliderVolume" showTickMarks="true"/>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" spacing="10">
+					<padding><Insets  topRightBottomLeft="10" /></padding>
+					<children>
+						<Button fx:id="btnPlay" text="재생" prefWidth="120"/>
+						<Button fx:id="btnPause" text="멈춤" prefWidth="120"/>
+						<Button fx:id="btnStop" text="중지" prefWidth="120"/>
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	
+	</bottom>
+
+
+</BorderPane>
+

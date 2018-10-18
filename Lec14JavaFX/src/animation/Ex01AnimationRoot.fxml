@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<StackPane prefHeight="500" prefWidth="500" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" 
+           fx:controller="animation.Ex01AnimationRootController">
+   <children>
+      <BorderPane style="-fx-background-color:#eaeaea" prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <BorderPane prefHeight="55.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <center>
+                  <Label contentDisplay="CENTER" text="메인화면" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+               </center>
+               <right>
+                  <Button fx:id="btnLogin" mnemonicParsing="false" text="로그인" BorderPane.alignment="CENTER" onAction="#handleLogin">
+                     <BorderPane.margin>
+                        <Insets right="10.0" />
+                     </BorderPane.margin>
+                  </Button>
+               </right>
+               <opaqueInsets>
+                  <Insets right="10.0" />
+               </opaqueInsets>
+            </BorderPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="52.0" layoutY="38.0" text="제목" />
+                  <TextField layoutX="116.0" layoutY="29.0" prefHeight="26.0" prefWidth="360.0" />
+                  <Label layoutX="52.0" layoutY="83.0" text="비밀번호" />
+                  <PasswordField layoutX="116.0" layoutY="78.0" />
+                  <ComboBox layoutX="116.0" layoutY="129.0" prefWidth="150.0" />
+                  <Label layoutX="52.0" layoutY="134.0" text="공개여부" />
+                  <DatePicker layoutX="329.0" layoutY="129.0" prefHeight="26.0" prefWidth="157.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </DatePicker>
+                  <Label layoutX="273.0" layoutY="134.0" text="게시 종료" />
+                  <Label layoutX="53.0" layoutY="183.0" text="내용" />
+                  <TextArea layoutX="52.0" layoutY="207.0" prefHeight="184.0" prefWidth="411.0" />
+                  <Button layoutX="175.0" layoutY="405.0" mnemonicParsing="false" text="등록" />
+                  <Button layoutX="278.0" layoutY="405.0" mnemonicParsing="false" text="취소" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.chart.BubbleChart?>
+
+<HBox prefHeight="300" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="control.Ex05ChartRootController">
+	
+	<padding><Insets topRightBottomLeft="10" /></padding>
+	
+	<!-- PieChart -->
+	<PieChart fx:id="pieChart" />
+	
+	<BarChart fx:id="barChart" >
+		<xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+		<yAxis><NumberAxis side="LEFT" /></yAxis>
+	</BarChart>
+	
+	<AreaChart fx:id="areaChart" >
+		<xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+		<yAxis><NumberAxis side="LEFT" /></yAxis>
+	</AreaChart>
+	
+	<LineChart fx:id="lineChart" >
+		<xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+		<yAxis><NumberAxis side="LEFT" /></yAxis>
+	</LineChart>
+	
+	<StackedBarChart fx:id="stackedBarChart" >
+		<xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+		<yAxis><NumberAxis side="LEFT" /></yAxis>
+	</StackedBarChart>
+	
+	<BubbleChart fx:id="bubbleChart" >
+		<xAxis><NumberAxis side="BOTTOM" /></xAxis>
+		<yAxis><NumberAxis side="LEFT" /></yAxis>
+	</BubbleChart>
+	
+	
+</HBox>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
