@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:batch="http://www.springframework.org/schema/batch"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<bean id="testJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="TestQuartzService" />
+		<property name="targetMethod" value="getTest" />
+		<!-- 동시성 작업이 없을 경우 false ,있을 경우 true -->
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="test2JobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="TestQuartzService" />
+		<property name="targetMethod" value="getTitle" />
+	</bean>
+
+	<bean id="test2Trigger"
+		class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+		<property name="jobDetail" ref="test2JobDetail" />
+		<property name="startDelay" value="6000" />
+		<property name="repeatInterval" value="1100" />
+	</bean>
+	<!-- 시스템 로그 요약 트리거 (위를 실행하는 시간 설정) -->
+	<bean id="testTrigger"
+		class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+		<property name="jobDetail" ref="testJobDetail" />
+		<!-- 시작하고 1분후에 실행 -->
+		<property name="startDelay" value="6000" />
+		<!-- interval tile (대기시간) -->
+		<property name="repeatInterval" value="1000" />
+	</bean>
+
+	<bean id="testScheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- <ref bean="testTrigger" /> <ref bean="test2Trigger" /> -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="testCronJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="TestQuartzService" />
+		<property name="targetMethod" value="getTest" />
+		<!-- 동시성 작업이 없을 경우 false ,있을 경우 true -->
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="testCronTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="testCronJobDetail" />
+		<property name="startDelay" value="5000" />
+		<!-- 								   초(/<-반복)분/시/일/월/년(?->해당월은 무시)-->
+		<!-- 10초마다 -->
+		<property name="cronExpression" value="0/10 * 14,15,16,17 * * ?" />
+		<!-- 1분마다-->
+		<!-- <property name="cronExpression" value="* 10 * * * * ?" /> -->
+	</bean>
+	
+	<bean id="testCronScheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="testCronTrigger" />
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- 0 0 12 * * ? 매일 12시(정오) -->
+	<!-- 0 15 10 ? * * 매일 오전 10시 15분 -->
+	<!-- 0 15 10 * * ? 매일 오전 10시 15분 -->
+	<!-- 0 15 10 * * ? * 매일 오전 10시 15분 -->
+	<!-- 0 15 10 * * ? 2005 2005년에 매일 아침 10시 15분 -->
+	<!-- 0 * 14 * * ? 매일 오후 2시 0분 ~ 59분 -->
+	<!-- 0 0/5 14 * * ? 매일 오후 2시부터 2시 55분까지 5분마다 -->
+	<!-- 0 0/5 14,18 * * ? 매일 오후 2시부터 2시 55분까지 5분마다, 6시부터 6시 55분까지 5분마다 -->
+	<!-- 0 0-5 14 * * ? 매일 오후 2시부터 2시 5분까지 매분 -->
+	<!-- 0 10,44 14 ? 3 WED 매년 3월의 수요일마다 오후 2시 10분과 2시 44분 -->
+	<!-- 0 15 10 ? * MON-FRI 월요일부터 금요일까지 오전 10시 15분 -->
+	<!-- 0 15 10 15 * ? 매달 15일 오전 10시 15분 -->
+	<!-- 0 15 10 L * ? 매달 마지막 날 오전 10시 15분 -->
+	<!-- 0 15 10 ? * 6L 매달 마지막 금요일 오전 10시 15분 -->
+	<!-- 0 15 10 ? * 6L 2002-2005 2002년부터 2005년까지 매달 마지막 금요일 오전 10시 15분 -->
+	<!-- 0 15 10 ? * 6#3 매달 3번째 금요일 오전 10시 15분 -->
+	<!-- 0 0 12 1/5 * ? 매달 첫날부터 5일마다 12시(정오) -->
+	<!-- 0 11 11 11 11 ? 매년 11월 11일 오전 11시 11분 -->
+	
+</beans>
+

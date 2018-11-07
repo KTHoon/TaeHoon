@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+
+	<!-- 파일 업로드 공동 (임시/원본 파일 위치 변경시) -->
+	<bean id="uploadTempDir"
+		class="org.springframework.core.io.FileSystemResource">
+		<constructor-arg value="/uploadTempDir" />
+	</bean>
+
+	<!-- 기존 스프링 프레임워크 파일 업로드 기능 -->
+	<!-- @RequestParam("attachFiles") List<MultipartFile> attachFiles -->
+	<bean id="spring.CommonsMultipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1024000000" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<!-- /// 향상된 파일 업로드 기능 을 활성화 -->
+	<!-- @RequestPart("attachFiles") List<Part> attachPart -->
+	<bean id="standard.ServletMultipartResolver"
+		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+	</bean>
+
+	<!-- 선택 적으로 MultipartResolver 선택 하기위하영 alias 선언 -->
+	<!-- spring.CommonsMultipartResolver -->
+	<alias name="standard.ServletMultipartResolver"
+		alias="multipartResolver" />
+
+
+
+
+
+
+</beans>

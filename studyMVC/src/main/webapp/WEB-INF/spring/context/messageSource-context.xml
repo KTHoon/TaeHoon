@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+
+
+
+	<!-- 다국어 처리를 위한 메시지 서비스 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<!-- 스프링 프레임워크 4.x 이하 버젼 -->
+				<!-- <value>classpath*:/resource/message-common</value> -->
+				<!-- 스프링 프레임워크 4.x 이상 버젼 -->
+				<value>/resource/message-common</value>
+			</list>
+		</property>
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="cacheSeconds" value="60" />
+		<!-- 등록된 코드 값이 없으면 코드 명을 출력 하겟당 -->
+		<property name="useCodeAsDefaultMessage" value="true" />
+	</bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<bean id="propertyService"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<!-- propertyService 객체에 *.properties 파일을 등록 -->
+		<property name="locations">
+			<list>
+				<value>classpath*:/db.properties</value>
+				<value>classpath*:/resource/message-common.properties</value>
+			</list>
+		</property>
+		<!-- properties map 전역 객체에 key, value 값을 등록 사용 방법 -->
+		<!-- *.properties 파일을 사용 안하고 등록 -->
+		<property name="properties">
+			<map>
+				<entry key="admin" value="오하영은 ? 이뻐용 사랑스러워용"/>
+			</map>
+		</property>
+	</bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- 파일 업로드 공동 -->
+	<bean id="uploadTempDir" class="org.springframework.core.io.FileSystemResource">
+		<constructor-arg value="/uploadTempDir" />
+	</bean>
+
+	<!-- 기존 스프링 프레임워크 파일 업로드 기능 -->
+	<!-- 	@RequestParam("attachFiles") List<MultipartFile> attachFiles -->
+	<bean id="spring.CommonsMultipartResolver" 
+	      class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1024000000" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+	
+	
+	<!-- /// 향상된 파일 업로드 기능 을 활성화 -->
+	<!-- @RequestPart("attachFiles") List<Part> attachPart  -->
+	<bean id="standard.ServletMultipartResolver" 
+		  class="org.springframework.web.multipart.support.StandardServletMultipartResolver" >
+	</bean>
+
+	<!-- 선택 적으로 MultipartResolver 선택 하기위하영 alias 선언 -->
+	<alias name="standard.ServletMultipartResolver" alias="multipartResolver"/>
+	 
+
+
+</beans>
