@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tm:TermDictionary xmlns:tm="http://exerd.com/term-model" version="1.1">
+  <term name="아이디" description="" physicalName="Mem_id" physicalDescription="" tag="//@tag.1"/>
+  <term name="회원이름" description="" physicalName="Mem_name" physicalDescription="" tag="//@tag.1"/>
+  <term name="비밀번호" description="" physicalName="Mem_pwd" physicalDescription="" tag="//@tag.1"/>
+  <term name="성별" description="" physicalName="Mem_gender" physicalDescription="" tag="//@tag.1"/>
+  <term name="이메일" description="" physicalName="Mem_email" physicalDescription="" tag="//@tag.1"/>
+  <term name="회원주소" description="" physicalName="Mem_address" physicalDescription="" tag="//@tag.1"/>
+  <term name="상품위치" description="" physicalName="Prd_position" physicalDescription="" tag="//@tag.1"/>
+  <term name="조회수" description="" physicalName="View_cnt" physicalDescription="" tag="//@tag.1">
+    <physicalSynonyms>NView_cnt</physicalSynonyms>
+    <physicalSynonyms>SView_cnt</physicalSynonyms>
+    <physicalSynonyms>FView_cnt</physicalSynonyms>
+  </term>
+  <term name="나의위치" description="" physicalName="Now_position" physicalDescription="" tag="//@tag.1"/>
+  <term name="상품글제목" description="" physicalName="PNotice_title" physicalDescription="" tag="//@tag.1"/>
+  <term name="상품번호" description="" physicalName="Prd_num" physicalDescription="" tag="//@tag.1"/>
+  <term name="관리자아이디" description="" physicalName="Mgr_id" physicalDescription="" tag="//@tag.1"/>
+  <term name="상품가격" description="" physicalName="Prd_price" physicalDescription="" tag="//@tag.1">
+    <physicalSynonyms>Prd_Price</physicalSynonyms>
+  </term>
+  <term name="회원등급" description="" physicalName="Mem_grade" physicalDescription="" tag="//@tag.1"/>
+  <term name="가입일자" description="" physicalName="reg_date" physicalDescription="" tag="//@tag.1"/>
+  <term name="관리자비밀번호" description="" physicalName="Mgr_pwd" physicalDescription="" tag="//@tag.1"/>
+  <term name="권한명" description="" physicalName="Mgr_auth" physicalDescription="" tag="//@tag.1"/>
+  <term name="새 컬럼" description="" physicalName="Mgr_auth_num" physicalDescription="" tag="//@tag.1">
+    <physicalSynonyms>PNotice_title</physicalSynonyms>
+  </term>
+  <term name="글번호" description="" physicalName="Notice_num" physicalDescription="" tag="//@tag.1"/>
+  <term name="공지사항글번호" description="" physicalName="Notice_num" physicalDescription="" tag="//@tag.1"/>
+  <term name="공지사항글제목" description="" physicalName="NTitle" physicalDescription="" tag="//@tag.1"/>
+  <term name="공지사항글내용" description="" physicalName="NContent" physicalDescription="" tag="//@tag.1"/>
+  <term name="등록일자" description="" physicalName="NReg_date" physicalDescription="" tag="//@tag.1">
+    <physicalSynonyms>SReg_date</physicalSynonyms>
+    <physicalSynonyms>FReg_date</physicalSynonyms>
+    <physicalSynonyms>CReg_date</physicalSynonyms>
+    <physicalSynonyms>reg_date</physicalSynonyms>
+  </term>
+  <term name="고객센터글번호" description="" physicalName="SNotice_num" physicalDescription="" tag="//@tag.1"/>
+  <term name="고객센터글제목" description="" physicalName="STitle" physicalDescription="" tag="//@tag.1"/>
+  <term name="고객센터글내용" description="" physicalName="SContent" physicalDescription="" tag="//@tag.1"/>
+  <term name="문답글번호" description="" physicalName="FNotice_num" physicalDescription="" tag="//@tag.1"/>
+  <term name="문답글제목" description="" physicalName="FTitle" physicalDescription="" tag="//@tag.1"/>
+  <term name="자게글내용" description="" physicalName="FContent" physicalDescription="" tag="//@tag.1"/>
+  <term name="댓글" description="" physicalName="CContent" physicalDescription="" tag="//@tag.1"/>
+  <term name="상품글내용" description="" physicalName="PContent" physicalDescription="" tag="//@tag.1"/>
+  <term name="상품사진" description="" physicalName="Prd_img" physicalDescription="" tag="//@tag.1"/>
+  <tag name="회원정보"/>
+  <tag name="다이어그램_용어수집" description="이 용어는 다이어그램에서 용어 수집도구를 사용하여 등록한 것입니다."/>
+</tm:TermDictionary>
